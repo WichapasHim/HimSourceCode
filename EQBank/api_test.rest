@@ -1,0 +1,18 @@
+@auth_apikey = c7282bb1-9d9b-4e37-bbcd-9cf226de8b98
+
+### risks 
+get https://cyber-risk.upguard.com/api/public/risks
+Authorization: {{auth_apikey}}
+Content-Type: application/json
+
+### domain | delta.sma.eqbank.ca for "finding": "SSL not available"
+get https://cyber-risk.upguard.com/api/public/domain
+    ?hostname=delta.sma.eqbank.ca
+Authorization: {{auth_apikey}}
+Content-Type: application/json
+
+
+
+
+
+

@@ -1,0 +1,57 @@
+WHEN MATCHED 
+
+THEN UPDATE SET 
+ TARGET.CommissionSK=SOURCE.CommissionSK ,
+TARGET.CommissionSourceID=SOURCE.CommissionSourceID ,
+TARGET.CommissionTypeSK=SOURCE.CommissionTypeSK ,
+TARGET.EOISK=SOURCE.EOISK ,
+TARGET.EmployeeSK=SOURCE.EmployeeSK ,
+TARGET.InstallType=SOURCE.InstallType ,
+TARGET.PayableDateSK=SOURCE.PayableDateSK ,
+TARGET.LineAmount=SOURCE.LineAmount ,
+TARGET.dwEffectiveFrom=SOURCE.dwEffectiveFrom ,
+TARGET.dwEffectiveTo=SOURCE.dwEffectiveTo ,
+TARGET.dwActiveRec=SOURCE.dwActiveRec ,
+TARGET.dwCreateDate=SOURCE.dwCreateDate ,
+TARGET.dwUpdateDate=SOURCE.dwUpdateDate ,
+TARGET.dwType1Hash=SOURCE.dwType1Hash ,
+TARGET.dwType2Hash=SOURCE.dwType2Hash
+
+WHEN NOT MATCHED BY TARGET 
+
+
+THEN 
+INSERT
+ (CommissionBK,
+CommissionSK,
+CommissionSourceID,
+CommissionTypeSK,
+EOISK,
+EmployeeSK,
+InstallType,
+PayableDateSK,
+LineAmount,
+dwEffectiveFrom,
+dwEffectiveTo,
+dwActiveRec,
+dwCreateDate,
+dwUpdateDate,
+dwType1Hash,
+dwType2Hash)
+ VALUES 
+(SOURCE.CommissionBK,
+SOURCE.CommissionSK,
+SOURCE.CommissionSourceID,
+SOURCE.CommissionTypeSK,
+SOURCE.EOISK,
+SOURCE.EmployeeSK,
+SOURCE.InstallType,
+SOURCE.PayableDateSK,
+SOURCE.LineAmount,
+SOURCE.dwEffectiveFrom,
+SOURCE.dwEffectiveTo,
+SOURCE.dwActiveRec,
+SOURCE.dwCreateDate,
+SOURCE.dwUpdateDate,
+SOURCE.dwType1Hash,
+SOURCE.dwType2Hash)

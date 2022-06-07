@@ -1,0 +1,1 @@
+ select distinct([EQ Assets])  as EQ_Assets from [dbo].[SrcUpGaurd_staging_2]  where [EQ Assets] not like '[0-9]%';
